@@ -1,31 +1,116 @@
-# Ola Ride Performance Analysis
-Tools Used: SQL | Power BI
+# Ola Ride Booking Data Analysis
 
-## Project Overview
-This project analyzes Ola ride booking data to evaluate platform performance, including booking success, cancellations, payment methods, vehicle-type usage, and customer ratings. The objective is to gain operational insights that support decision-making.
+## 📌 Project Overview
 
-## What Was Done
-- Analyzed ride data using SQL to answer operational and business questions
-- Evaluated booking success rates, cancellations, and payment methods
-- Studied vehicle-type performance and ride distance patterns
-- Built a Power BI dashboard to track key performance indicators (KPIs)
+This project analyzes 103,024 ride bookings to evaluate operational efficiency, revenue performance, and customer behavior patterns in a ride-hailing platform.
 
-## Key Analysis Areas
-- Successful vs cancelled bookings
-- Cancellation reasons by customers and drivers
-- Revenue distribution by payment method
-- Vehicle-type performance and ride distance
-- Customer and driver ratings
+The goal is to identify revenue drivers, cancellation issues, and strategic improvement areas using SQL and Power BI.
 
-## Key Insights
-- Cash and UPI are the dominant payment methods
-- Cancellations represent a major operational challenge
-- Different vehicle types serve different ride-distance patterns
-- Ratings are fairly consistent across vehicle types, indicating stable service quality
+---
 
-## Business Value
-The analysis helps identify areas to reduce cancellations, optimize vehicle allocation, and focus on dominant payment channels to improve operational efficiency.
+## 📊 Key Performance Indicators (KPIs)
 
-## Project Files
-- SQL queries for ride data analysis
-- Power BI dashboard for KPI tracking and visualization
+- **Total Bookings:** 103,024  
+- **Success Rate:** 62.09%  
+- **Cancellation Rate:** 37.91%  
+- **Total Revenue (Successful Rides):** ₹35,080,467  
+- **Top Revenue Vehicle:** Prime Sedan (₹5,224,050)
+
+---
+
+## 🛠 Tools Used
+
+- Excel (Data Cleaning)
+- MySQL (Business KPI Analysis)
+- Power BI (Data Visualization & Reporting)
+
+---
+
+## 🗄 SQL Analysis
+
+### Total Bookings
+```sql
+SELECT COUNT(*) AS total_bookings
+FROM ola_rides;
+```
+
+### Success Rate
+```sql
+SELECT 
+ROUND(
+    SUM(CASE WHEN Booking_Status = 'Success' THEN 1 ELSE 0 END) 
+    * 100.0 / COUNT(*), 2
+) AS success_rate_percentage
+FROM ola_rides;
+```
+
+### Cancellation Rate
+```sql
+SELECT 
+ROUND(
+    SUM(CASE 
+        WHEN Booking_Status IN 
+        ('Canceled by Driver', 'Canceled by Customer', 'Driver Not Found') 
+        THEN 1 ELSE 0 END
+    ) * 100.0 / COUNT(*), 2
+) AS cancellation_rate_percentage
+FROM ola_rides;
+```
+
+### Revenue by Vehicle Type
+```sql
+SELECT 
+Vehicle_Type,
+SUM(Booking_Value) AS total_revenue
+FROM ola_rides
+WHERE Booking_Status = 'Success'
+GROUP BY Vehicle_Type
+ORDER BY total_revenue DESC;
+```
+
+---
+
+## 📊 Dashboard Preview
+
+### 1️⃣ Overall Performance
+(Add image here)
+![Overall Dashboard](dashboard/dashboard_overall.png)
+
+---
+
+### 2️⃣ Cancellation Analysis
+(Add image here)
+![Cancellation Dashboard](dashboard/dashboard_cancellation.png)
+
+---
+
+### 3️⃣ Vehicle Performance
+(Add image here)
+![Vehicle Dashboard](dashboard/dashboard_vehicle.png)
+
+---
+
+## 🔍 Key Insights
+
+- Nearly **38% of bookings fail**, indicating significant operational inefficiencies.
+- Prime Sedan generates the highest revenue among vehicle categories.
+- Premium vehicles contribute disproportionately to total revenue.
+- Driver-related cancellations represent a major operational gap.
+- A small group of high-frequency customers contributes significantly to bookings.
+
+---
+
+## 💡 Business Recommendations
+
+1. Reduce driver-related cancellations by improving vehicle availability checks.
+2. Increase allocation of high-revenue vehicle types in high-demand areas.
+3. Incentivize high-frequency customers through loyalty programs.
+4. Improve cancellation tracking to reduce revenue leakage.
+
+---
+
+## 🚀 Conclusion
+
+This project demonstrates structured KPI extraction, operational analysis, and business storytelling using SQL and Power BI.
+
+It highlights how data-driven insights can improve ride fulfillment efficiency and revenue optimization.
