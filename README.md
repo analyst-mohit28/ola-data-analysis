@@ -72,19 +72,18 @@ ORDER BY total_revenue DESC;
 
 ## 📊 Dashboard Preview
 
-### 1️⃣ Overall Performance
-![Overall Dashboard]([dashboard/dashboard_overall.png](https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Overall.png))
+### Overall Performance
+![Overall Dashboard](https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Overall.png)
 
 ---
 
-### 2️⃣ Cancellation Analysis
-![Cancellation Dashboard]([https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Cancellation.png))
+### Cancellation Analysis
+![Cancellation Analysis](https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Cancellation.png)
 
 ---
 
-### 3️⃣ Vehicle Performance
-![Vehicle Dashboard]([dashboard/dashboard_vehicle.png]([https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Vehicle%20type%20Performance.png))
-
+### Vehicle Performance
+![Vehicle Performance](https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Vehicle%20type%20Performance.png)
 ---
 
 ## 🔍 Key Insights
