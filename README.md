@@ -1,6 +1,6 @@
 # Ola Ride Booking Data Analysis
 
-## 📌 Project Overview
+## Project Overview
 
 This project analyzes 103,024 ride bookings to evaluate operational efficiency, revenue performance, and customer behavior patterns in a ride-hailing platform.
 
@@ -18,7 +18,7 @@ The goal is to identify revenue drivers, cancellation issues, and strategic impr
 
 ---
 
-## 🛠 Tools Used
+## Tools Used
 
 - Excel (Data Cleaning)
 - MySQL (Business KPI Analysis)
@@ -26,7 +26,7 @@ The goal is to identify revenue drivers, cancellation issues, and strategic impr
 
 ---
 
-## 🗄 SQL Analysis
+## SQL Analysis
 
 ### Total Bookings
 ```sql
@@ -70,7 +70,7 @@ ORDER BY total_revenue DESC;
 
 ---
 
-## 📊 Dashboard Preview
+## Dashboard Preview
 
 ### Overall Performance
 ![Overall Dashboard](https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Overall.png)
@@ -86,7 +86,7 @@ ORDER BY total_revenue DESC;
 ![Vehicle Performance](https://github.com/analyst-mohit28/ola-data-analysis/blob/main/Vehicle%20type%20Performance.png)
 ---
 
-## 🔍 Key Insights
+## Key Insights
 
 - Nearly **38% of bookings fail**, indicating significant operational inefficiencies.
 - Prime Sedan generates the highest revenue among vehicle categories.
@@ -96,7 +96,7 @@ ORDER BY total_revenue DESC;
 
 ---
 
-## 💡 Business Recommendations
+## Business Recommendations
 
 1. Reduce driver-related cancellations by improving vehicle availability checks.
 2. Increase allocation of high-revenue vehicle types in high-demand areas.
@@ -105,7 +105,7 @@ ORDER BY total_revenue DESC;
 
 ---
 
-## 🚀 Conclusion
+## Conclusion
 
 This project demonstrates structured KPI extraction, operational analysis, and business storytelling using SQL and Power BI.
 
