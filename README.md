@@ -8,7 +8,7 @@ The goal is to identify revenue drivers, cancellation issues, and strategic impr
 
 ---
 
-## 📊 Key Performance Indicators (KPIs)
+## Key Performance Indicators (KPIs)
 
 - **Total Bookings:** 103,024  
 - **Success Rate:** 62.09%  
